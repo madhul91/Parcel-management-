@@ -69,14 +69,20 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <label>Address</label>
+           <div class="form-group">
+    <label>
+        Complete Mailing Address
+        (Including ZIP/Postal Code)
+    </label>
 
-                <textarea
-                        id="address"
-                        rows="4"
-                        required></textarea>
-            </div>
+    <textarea
+        id="address"
+        rows="4"
+        maxlength="200"
+        placeholder="House No, Street, City, State, ZIP/Postal Code"
+        required>
+    </textarea>
+</div>
 
             <div class="form-group">
                 <label>Password</label>
@@ -122,28 +128,51 @@
         </form>
 
         <!-- Login Form -->
+<!-- Login Form -->
 
-        <form id="loginForm" class="hidden">
+<form id="loginForm" class="hidden">
 
-            <h2>Customer Login</h2>
+    <h2>Customer Login</h2>
 
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" id="loginEmail">
-            </div>
+    <div class="form-group">
+        <label>Customer ID</label>
+        <input
+            type="text"
+            id="loginCustomerId"
+            minlength="5"
+            maxlength="20"
+            placeholder="Enter Customer ID"
+            required>
+    </div>
 
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" id="loginPassword">
-            </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input
+            type="password"
+            id="loginPassword"
+            maxlength="30"
+            placeholder="Enter Password"
+            required>
+    </div>
 
-            <button type="submit" class="btn-primary">
-                Login
-            </button>
+    <button type="submit" class="btn-primary">
+        Login
+    </button>
 
-            <div id="loginMessage"></div>
+    <div id="loginMessage"></div>
 
-        </form>
+</form>
+        
+        
+        <div id="ackScreen" class="hidden">
+
+    <h2 class="success">
+        Customer Registration successful.
+    </h2>
+
+    <p id="customerInfo"></p>
+
+</div>
 
     </div>
 

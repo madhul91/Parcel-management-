@@ -1,0 +1,130 @@
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f7fa;
+}
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    padding:40px;
+}
+
+.card{
+    width:700px;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:var(--shadow);
+}
+
+.tabs{
+    display:flex;
+    margin-bottom:20px;
+}
+
+.tab-btn{
+    flex:1;
+    padding:12px;
+    border:none;
+    cursor:pointer;
+}
+
+.active{
+    background:var(--primary);
+    color:white;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    padding:10px;
+}
+
+.mobile-group{
+    display:grid;
+    grid-template-columns:1fr 3fr;
+    gap:10px;
+}
+
+.btn-group{
+    display:flex;
+    gap:10px;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+.btn-secondary{
+    background:var(--secondary);
+    color:white;
+    border:none;
+    padding:10px 20px;
+}
+
+.hidden{
+    display:none;
+}
+
+.success{
+    color:green;
+    margin-top:15px;
+}
+
+.error{
+    color:red;
+    margin-top:15px;
+}
+.hidden{
+    display:none;
+}
+
+.success{
+    color:green;
+    margin-top:15px;
+}
+
+.error{
+    color:red;
+    margin-top:15px;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    background:#1e293b;
+    color:white;
+}
+
+.menu{
+    background:#334155;
+    padding:12px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    text-decoration:underline;
+}

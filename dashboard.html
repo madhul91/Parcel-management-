@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Home</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="navbar">
+
+    <h2>Parcel Management System</h2>
+
+    <div id="welcomeMessage"></div>
+
+</header>
+
+<nav class="menu">
+
+    <a href="dashboard.html">Home</a>
+
+    <a href="booking.html">Booking Service</a>
+
+    <a href="tracking.html">Tracking</a>
+
+    <a href="previous-booking.html">Previous Booking</a>
+
+    <a href="support.html">Contact Support</a>
+
+    <a href="#" id="logoutBtn">Logout</a>
+
+</nav>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Customer Home</h1>
+
+        <p>
+            Welcome to Parcel Management System.
+        </p>
+
+        <p>
+            Select an option from the menu above.
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+const customer =
+    JSON.parse(localStorage.getItem("customer"));
+
+if(customer){
+
+    document.getElementById("welcomeMessage")
+        .innerText =
+        `Welcome ${customer.customerName}`;
+
+}
+
+document.getElementById("logoutBtn")
+.addEventListener("click", function(){
+
+    localStorage.removeItem("loggedInUser");
+
+    window.location.href = "index.html";
+
+});
+
+</script>
+
+</body>
+</html>
