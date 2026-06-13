@@ -108,7 +108,9 @@ export function handleRegistration(event) {
         address: document.getElementById("address").value.trim(),
         password: document.getElementById("password").value,
         confirmPassword: document.getElementById("confirmPassword").value,
-        notification: document.getElementById("notification").checked
+        notification: document.getElementById("notification").checked,
+        // role: document.getElementById("role").value
+        role : document.getElementById("loginRole").value
     };
 
     const message = document.getElementById("message");

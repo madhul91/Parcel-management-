@@ -1,15 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Booking Service</title>
+<meta charset="UTF-8">
+<title>Booking Service</title>
+
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <h1>Booking Service</h1>
 
-<p>Booking functionality will be implemented here.</p>
+<div class="card">
 
-<a href="dashboard.html">Back to Home</a>
+    <h3>Customer Information</h3>
+
+    <p><strong>Name:</strong> <span id="custName"></span></p>
+
+    <p><strong>Address:</strong> <span id="custAddress"></span></p>
+
+    <p><strong>Contact:</strong> <span id="custMobile"></span></p>
+
+</div>
+
+<form id="bookingForm">
+
+    <h3>Receiver Details</h3>
+
+    <input type="text"
+           id="receiverName"
+           placeholder="Receiver Name"
+           required>
+
+    <textarea id="receiverAddress"
+              placeholder="Receiver Address"
+              required></textarea>
+
+    <input type="text"
+           id="receiverPin"
+           placeholder="Receiver PIN Code"
+           required>
+
+    <input type="tel"
+           id="receiverMobile"
+           placeholder="Receiver Mobile"
+           maxlength="10"
+           required>
+
+    <h3>Parcel Information</h3>
+
+    <input type="number"
+           id="parcelWeight"
+           placeholder="Weight in Grams"
+           required>
+
+    <textarea id="parcelDescription"
+              placeholder="Parcel Contents Description"
+              required></textarea>
+
+    <label>Delivery Type</label>
+
+    <select id="deliveryType">
+        <option value="Standard">Standard</option>
+        <option value="Express">Express</option>
+    </select>
+
+    <label>Packing Preference</label>
+
+    <select id="packingType">
+        <option value="Basic">Basic</option>
+        <option value="Premium">Premium</option>
+    </select>
+
+    <label>Pickup Time</label>
+    <input type="datetime-local"
+           id="pickupTime">
+
+    <label>Dropoff Time</label>
+    <input type="datetime-local"
+           id="dropoffTime">
+
+    <div>
+
+        <h3>
+            Parcel Service Cost :
+            ₹ <span id="serviceCost">0</span>
+        </h3>
+
+    </div>
+
+    <button type="submit">
+        Book Parcel
+    </button>
+
+</form>
+
+<div id="bookingMessage"></div>
+
+<script type="module" src="js/modules/booking.js"></script>
 
 </body>
 </html>

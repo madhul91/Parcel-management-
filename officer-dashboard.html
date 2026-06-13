@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Officer Home</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        Parcel Management System
+    </div>
+
+    <div id="welcomeMessage"></div>
+
+</header>
+
+<nav class="menu">
+
+    <a href="officer-dashboard.html">
+        Home
+    </a>
+
+    <a href="tracking.html">
+        Tracking
+    </a>
+
+    <a href="delivery-status.html">
+        Delivery Status
+    </a>
+
+    <a href="pickup-scheduling.html">
+        Pickup Scheduling
+    </a>
+
+    <a href="view-bookings.html">
+        View All Bookings
+    </a>
+
+    <a href="#" id="logoutBtn">
+        Logout
+    </a>
+
+</nav>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Officer Home</h1>
+
+        <p>
+            Welcome to the Officer Dashboard.
+        </p>
+
+        <p>
+            Use the navigation menu above to
+            manage bookings, deliveries and pickups.
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+const user =
+    JSON.parse(
+        localStorage.getItem(
+            "loggedInUser"
+        )
+    );
+
+if(user){
+
+    document
+        .getElementById(
+            "welcomeMessage"
+        )
+        .innerText =
+        `Welcome ${user.customerName} (Officer)`;
+}
+
+document
+.getElementById("logoutBtn")
+.addEventListener("click", () => {
+
+    localStorage.removeItem(
+        "loggedInUser"
+    );
+
+    window.location.href =
+        "index.html";
+});
+
+</script>
+
+</body>
+</html>

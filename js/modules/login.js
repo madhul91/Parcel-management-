@@ -1,32 +1,57 @@
 import { loginCustomer } from "../services/api.js";
 
-export async function handleLogin(event){
+export async function handleLogin(event) {
 
     event.preventDefault();
 
+    const roleElement = document.getElementById("loginRole");
+
     const data = {
-        customerId:
-            document.getElementById("loginCustomerId")
+        customerId: document
+            .getElementById("loginCustomerId")
             .value
             .trim(),
 
-        password:
-            document.getElementById("loginPassword")
-            .value
+        password: document
+            .getElementById("loginPassword")
+            .value,
+
+        role: roleElement ? roleElement.value : "Customer"
     };
 
     const message =
         document.getElementById("loginMessage");
 
-    try{
+    try {
 
-        await loginCustomer(data);
+        const user =
+            await loginCustomer(data);
 
-        window.location.href =
-            "dashboard.html";
+        localStorage.setItem(
+            "loggedInUser",
+            JSON.stringify(user)
+        );
 
-    }
-    catch(error){
+        message.className = "success";
+        message.innerText = "Login Successful";
+
+        setTimeout(() => {
+
+            if (user.role === "Officer") {
+
+                window.location.href =
+                    "officer-dashboard.html";
+
+            } else {
+
+                window.location.href =
+                    "dashboard.html";
+
+            }
+
+        }, 1000);
+
+    } catch (error) {
 
         message.className = "error";
         message.innerText = error.message;
